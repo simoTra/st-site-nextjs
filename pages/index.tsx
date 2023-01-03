@@ -1,16 +1,20 @@
 import Head from "next/head";
+import Header from "../components/Header";
+import Bio from "../components/Bio";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
       <Head>
         <title>Simone Traversi</title>
       </Head>
-      <h1 className="text-blue-500">Simone Traversi</h1>
-      {/* Header */}
+      <Header />
+      <section id="bio" className="snap-center">
+        <Bio />
+      </section>
       {/* Works */}
       {/* Passions */}
-      {/* CV */}
+      {/* Resume */}
       {/* Typeform */}
     </div>
   );
