@@ -1,6 +1,7 @@
 import info from './info'
-import knownTechnologies from './knownTechnologies'
+import skill from './skill'
 import passion from './passion'
+import social from './social'
 import work from './work'
 
-export const schemaTypes = [info, work, passion, knownTechnologies]
+export const schemaTypes = [info, work, passion, skill, social]

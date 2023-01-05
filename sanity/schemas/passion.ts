@@ -21,10 +21,10 @@ export default defineType({
       type: 'string',
     }), 
     defineField({
-      name: 'technologies',
-      title: 'Technologies',
+      name: 'skill',
+      title: 'Skill',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'knownTechnologies'} }]
+      of: [{type: 'reference', to: {type: 'skill'} }]
     }),
     defineField({
       name: 'image',
@@ -34,7 +34,7 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
+/*     defineField({
       name: 'initialData',
       title: 'InitialData',
       type: 'date',
@@ -43,7 +43,7 @@ export default defineType({
       name: 'endData',
       title: 'EndData',
       type: 'date',
-    }),
+    }), */
     defineField({
       name: 'url',
       title: 'Url',

@@ -32,11 +32,11 @@ const Home: NextPage = () => {
         <ContactMe />
       </section>
       <Link href="#homePage">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+        <footer className="sticky bottom-5 w-full cursor-pointer z-30">
           <div className="flex items-center justify-center">
             <img
               src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-30"
             />
           </div>
         </footer>

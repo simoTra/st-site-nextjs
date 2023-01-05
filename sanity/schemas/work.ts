@@ -44,10 +44,10 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
-      name: 'technologies',
-      title: 'Technologies',
+      name: 'skill',
+      title: 'Skill',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'knownTechnologies'} }]
+      of: [{type: 'reference', to: {type: 'skill'} }]
     }),
     defineField({
       name: 'bulletPoint',
