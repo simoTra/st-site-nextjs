@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { Work } from "../typings";
 import WorkCard from "./WorkCard";
 
-const Works = () => {
+type Props = {
+  works: Work[];
+};
+
+const Works = ({ works }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,12 +22,9 @@ const Works = () => {
         EXPERIENCES
       </h3>
       <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-track-gray-400/20 scrollbar-thumb-[#ff8500] scrollbar-thin">
-        <WorkCard />
-        <WorkCard />
-        <WorkCard />
-        <WorkCard />
-        <WorkCard />
-        <WorkCard />
+        {works.map((w) => (
+          <WorkCard key={w._id} work={w} />
+        ))}
       </div>
     </motion.div>
   );

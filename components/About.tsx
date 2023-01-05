@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
+import { urlFor } from "../sanity";
+import info from "../sanity/schemas/info";
+import { Info } from "../typings";
 
-type Props = {};
+type Props = {
+  info: Info;
+};
 
-const About = (props: Props) => {
+const About = ({ info }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +25,7 @@ const About = (props: Props) => {
       </h3>
 
       <motion.img
-        src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
+        src={urlFor(info?.bioImage).url()}
         alt="about image"
         initial={{ x: -200, opacity: 0 }}
         whileInView={{
@@ -32,17 +37,17 @@ const About = (props: Props) => {
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h:96 xl:w-[500px] xl:h-[600px]"
       />
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">Scrivi qualcosa</h4>
-        <p className="text-base">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
-          provident suscipit harum numquam quod minus nobis omnis facere nihil
-          reprehenderit pariatur saepe, asperiores sequi nesciunt repellat
-          perferendis nisi a velit.
-        </p>
+        <h4 className="text-4xl font-semibold">About me</h4>
+        <p className="text-base">{info.bio}</p>
         <div>
           <Link href="#">
-            <motion.button whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }} className="homePageButton tracking-[6px]">resume</motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="homePageButton tracking-[6px]"
+            >
+              resume
+            </motion.button>
           </Link>
         </div>
       </div>

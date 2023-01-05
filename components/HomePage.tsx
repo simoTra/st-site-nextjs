@@ -2,10 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Link from "next/link";
+import { Info } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  info: Info;
+};
 
-function HomePage({}: Props) {
+function HomePage({ info }: Props) {
+  console.log(info.bio);
   const [text] = useTypewriter({
     words: ["Hello", "From", "Typewriter", "Hook!"],
     loop: true,
@@ -27,14 +32,17 @@ function HomePage({}: Props) {
         <div className="absolute mt-36 border border-[#ff8500] rounded-full h-[90px] w-[90px] animate-[ping_3s_infinite]" />
       </motion.div>
       <img
-        src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
+        src={urlFor(info?.homePageImage).url()}
         alt="home page image"
         className="relative rounded-full h-36 w-36 object-cover z-10"
       />
       <div className="z-20">
-        <h2 className="uppercase tracking-[24px] text-gray-500 text-sm font-bold py-5 hover:text-gray-600">
-          Tech addicted
+        <h2 className="uppercase tracking-[24px] text-gray-500 text-sm font-bold pt-10 pb-5 hover:text-gray-600">
+          {info?.name}
         </h2>
+        <h3 className="tracking-[24px] text-gray-500 text-sm hover:text-gray-600">
+          tech addicted
+        </h3>
         <h1 className="text-3xl tracking-[2px] lg:text-4xl text-gray-300 font-semibold py-5">
           <span className="mr-3">Aggiungere parole: {text}</span>
           <Cursor cursorColor="#ff8500" />

@@ -1,29 +1,43 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import HomePage from "../components/HomePage";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import About from "../components/About";
 import Works from "../components/Works";
 import Passions from "../components/Passions";
 import ContactMe from "../components/ContactMe";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Info, Passion, Skill, Social, Work } from "../typings";
+import { fetchInfo } from "../utils/fetchInfo";
+import { fetchWorks } from "../utils/fetchWorks";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchPassions } from "../utils/fetchPassions";
+import { fetchSocials } from "../utils/fetchSocials";
 
-const Home: NextPage = () => {
+type Props = {
+  info: Info;
+  works: Work[];
+  skills: Skill[];
+  passions: Passion[];
+  socials: Social[];
+};
+
+const Home = ({ info, works, skills, passions, socials }: Props) => {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#ff8500]">
       <Head>
         <title>Simone Traversi</title>
       </Head>
-      <Header />
+      <Header socials={socials} />
       <section id="homePage" className="snap-start">
-        <HomePage />
+        <HomePage info={info} />
       </section>
       <section id="about" className="snap-center">
-        <About />
+        <About info={info} />
       </section>
       <section id="works" className="snap-center">
-        <Works />
+        <Works works={works} />
       </section>
       <section id="passions" className="snap-start">
         <Passions />
@@ -64,3 +78,22 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const info: Info = await fetchInfo();
+  const works: Work[] = await fetchWorks();
+  const skills: Skill[] = await fetchSkills();
+  const passions: Passion[] = await fetchPassions();
+  const socials: Social[] = await fetchSocials();
+  console.log(works[0].company);
+  return {
+    props: {
+      info,
+      works,
+      skills,
+      passions,
+      socials,
+    },
+    revalidate: 10,
+  };
+};

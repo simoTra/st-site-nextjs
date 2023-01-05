@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { urlFor } from "../sanity";
+import { Work } from "../typings";
 
-type Props = {};
+type Props = {
+  work: Work;
+};
 
-const WorkCard = (props: Props) => {
+const WorkCard = ({ work }: Props) => {
   return (
     <motion.article
       whileHover={{ scale: 1.05 }}
@@ -17,35 +21,34 @@ const WorkCard = (props: Props) => {
         }}
         viewport={{ once: true }}
         transition={{ duration: 2 }}
-        src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
+        src={
+          work?.image === undefined
+            ? "https://cdn.sanity.io/images/v03ttooh/production/71a48a1ef8f564ecaea9c149dc818bff914bd15a-1530x1020.jpg"
+            : urlFor(work?.image).url()
+        }
         alt="work image"
       />
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">Job title</h4>
         <p className="font-bold text-2xl mt-1">work place</p>
         <div className="flex space-x-2 my-2">
-          <img
-            className="rounded-full h-10 w-10"
-            src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
-            alt="skill image"
-          />
-          <img
-            className="rounded-full h-10 w-10"
-            src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
-            alt="skill image"
-          />
-          <img
-            className="rounded-full h-10 w-10"
-            src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
-            alt="skill image"
-          />
+          {work.skill.map((s) => (
+            <img
+              className="rounded-full h-10 w-10"
+              src={
+                s.image === undefined
+                  ? "https://cdn.sanity.io/images/v03ttooh/production/71a48a1ef8f564ecaea9c149dc818bff914bd15a-1530x1020.jpg"
+                  : urlFor(s?.image).url()
+              }
+              alt="skill image"
+            />
+          ))}
         </div>
         <p className="uppercase py-5 text-gray-300 ">dates</p>
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>bla</li>
-          <li>bla</li>
-          <li>bla</li>
-          <li>bla</li>
+          {work.bulletPoint.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
         </ul>
       </div>
     </motion.article>
