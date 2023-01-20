@@ -10,9 +10,8 @@ type Props = {
 };
 
 function HomePage({ info }: Props) {
-  console.log(info.bio);
   const [text] = useTypewriter({
-    words: ["Hello", "From", "Typewriter", "Hook!"],
+    words: info.typewriter,
     loop: true,
     delaySpeed: 2000,
   });
@@ -37,14 +36,14 @@ function HomePage({ info }: Props) {
         className="relative rounded-full h-36 w-36 object-cover z-10"
       />
       <div className="z-20">
-        <h2 className="uppercase tracking-[24px] text-gray-500 text-sm font-bold pt-10 pb-5 hover:text-gray-600">
+        <h2 className="uppercase tracking-[20px] text-gray-500 text-sm font-bold pt-10 pb-5 hover:text-gray-600">
           {info?.name}
         </h2>
-        <h3 className="tracking-[24px] text-gray-500 text-sm hover:text-gray-600">
+        <h3 className="tracking-[20px] text-gray-500 text-sm hover:text-gray-600">
           tech addicted
         </h3>
         <h1 className="text-3xl tracking-[2px] lg:text-4xl text-gray-300 font-semibold py-5">
-          <span className="mr-3">Aggiungere parole: {text}</span>
+          <span className="mr-3">{text}</span>
           <Cursor cursorColor="#ff8500" />
         </h1>
         <div className="space-x-5">

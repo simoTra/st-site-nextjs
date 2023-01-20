@@ -15,7 +15,7 @@ function ContactMe({}: Props) {
       transition={{ duration: 2 }}
       className="h-screen relative flex flex-col text-center overflow-hidden md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 tracking-[24px] text-gray-500 text-2xl hover:text-gray-600">
+      <h3 className="absolute top-24 tracking-[20px] text-gray-500 text-2xl hover:text-gray-600">
         CONTACT ME
       </h3>
       <Widget

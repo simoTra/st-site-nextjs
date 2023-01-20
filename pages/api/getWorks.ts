@@ -3,7 +3,10 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
 import { Work } from "../../typings";
 
-const query = groq`*[_type == 'work']`;
+const query = groq`*[_type == 'work']{
+  ...,
+  skill[]->
+}`;
 
 type Data = {
   works: Work[];

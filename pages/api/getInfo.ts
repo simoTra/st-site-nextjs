@@ -3,7 +3,10 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
 import { Info } from "../../typings";
 
-const query = groq`*[_type == 'info'][0]`;
+const query = groq`*[_type == 'info'][0]{
+  ...,
+  'resume':resume.asset->url
+}`;
 
 type Data = {
   info: Info;

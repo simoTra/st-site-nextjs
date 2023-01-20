@@ -10,6 +10,7 @@ export default defineType({
       title: 'Name',
       type: 'string',
     }),
+    defineField({name: 'typewriter', title: 'Typewriter', type: 'array', of:[{type: 'string'}]}),
     defineField({
       name: 'shortBio',
       title: 'ShortBio',
@@ -36,5 +37,10 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'resume',
+      title: 'Resume',
+      type: 'file'
+    })
   ],
 })

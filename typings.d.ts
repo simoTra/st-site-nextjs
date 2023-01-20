@@ -16,10 +16,12 @@ interface Image {
 export interface Info extends SanityBase {
   _type: "info";
   bio: string;
+  typewriter: string[];
   bioImage: Image;
   homePageImage: Image;
   name: string;
   shortBio: string;
+  resume: string;
 }
 
 export interface Passion extends SanityBase {
@@ -29,7 +31,7 @@ export interface Passion extends SanityBase {
   description: string;
   skill: Skill[];
   image: Image;
-/*   initialData: date;
+  /*   initialData: date;
   endData: date; */
   url: string;
 }

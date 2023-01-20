@@ -8,6 +8,7 @@ type Props = {
 };
 
 const WorkCard = ({ work }: Props) => {
+  console.log(work.skill);
   return (
     <motion.article
       whileHover={{ scale: 1.05 }}
@@ -29,22 +30,25 @@ const WorkCard = ({ work }: Props) => {
         alt="work image"
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">Job title</h4>
-        <p className="font-bold text-2xl mt-1">work place</p>
+        <h4 className="text-4xl font-light">{work.job}</h4>
+        <p className="font-bold text-2xl mt-1">{work.company}</p>
         <div className="flex space-x-2 my-2">
-          {work.skill.map((s) => (
+          {work.skill.map((s, i) => (
             <img
+              key={i}
               className="rounded-full h-10 w-10"
               src={
                 s.image === undefined
                   ? "https://cdn.sanity.io/images/v03ttooh/production/71a48a1ef8f564ecaea9c149dc818bff914bd15a-1530x1020.jpg"
-                  : urlFor(s?.image).url()
+                  : urlFor(s.image).url()
               }
               alt="skill image"
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300 ">dates</p>
+        <p className="uppercase py-5 text-gray-300 ">
+          {work.initialData} - {work.current ? "PRESENT" : work.endData}
+        </p>
         <ul className="list-disc space-y-4 ml-5 text-lg">
           {work.bulletPoint.map((b, i) => (
             <li key={i}>{b}</li>
