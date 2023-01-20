@@ -4,6 +4,5 @@ export const fetchInfo = async () => {
 
   const data = await res.json();
   const info: Info = data.info;
-  console.log(info);
   return info;
 };

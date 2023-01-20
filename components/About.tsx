@@ -10,7 +10,6 @@ type Props = {
 };
 
 const About = ({ info }: Props) => {
-  console.log(info.resume);
   return (
     <motion.div
       initial={{ opacity: 0 }}

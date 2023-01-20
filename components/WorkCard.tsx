@@ -8,7 +8,6 @@ type Props = {
 };
 
 const WorkCard = ({ work }: Props) => {
-  console.log(work.skill);
   return (
     <motion.article
       whileHover={{ scale: 1.05 }}
