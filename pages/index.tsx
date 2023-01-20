@@ -40,7 +40,7 @@ const Home = ({ info, works, skills, passions, socials }: Props) => {
         <Works works={works} />
       </section>
       <section id="passions" className="snap-start">
-        <Passions />
+        <Passions passions={passions} />
       </section>
       <section id="contactMe" className="snap-center">
         <ContactMe />
@@ -85,7 +85,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: Skill[] = await fetchSkills();
   const passions: Passion[] = await fetchPassions();
   const socials: Social[] = await fetchSocials();
-  console.log(works[0].company);
   return {
     props: {
       info,
