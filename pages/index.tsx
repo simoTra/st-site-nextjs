@@ -48,10 +48,46 @@ const Home = ({ info, works, skills, passions, socials }: Props) => {
       <footer className="sticky bottom-5 sm:bottom-10 cursor-pointer z-30">
         <Link href="#homePage">
           <div className="flex items-center justify-center">
-            <img
-              src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
+            <svg
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-            />
+              viewBox="-35.75 -35.75 294.91 294.91"
+              fill="#000000"
+              transform="rotate(270)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#ff8500"
+                stroke-width="31.27782"
+              >
+                {" "}
+                <g>
+                  {" "}
+                  <g>
+                    {" "}
+                    <g>
+                      {" "}
+                      <polygon points="57.179,223.413 51.224,217.276 159.925,111.71 51.224,6.127 57.179,0 172.189,111.71 "></polygon>{" "}
+                    </g>{" "}
+                  </g>{" "}
+                </g>{" "}
+              </g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <g>
+                  {" "}
+                  <g>
+                    {" "}
+                    <g>
+                      {" "}
+                      <polygon points="57.179,223.413 51.224,217.276 159.925,111.71 51.224,6.127 57.179,0 172.189,111.71 "></polygon>{" "}
+                    </g>{" "}
+                  </g>{" "}
+                </g>{" "}
+              </g>
+            </svg>
           </div>
         </Link>
       </footer>
