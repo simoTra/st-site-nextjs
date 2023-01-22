@@ -24,6 +24,7 @@ function ContactMe({}: Props) {
         className="pt-24"
       />
     </motion.div>
+    
   );
 }
 

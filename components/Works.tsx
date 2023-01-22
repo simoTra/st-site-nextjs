@@ -9,24 +9,16 @@ type Props = {
 
 const Works = ({ works }: Props) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{
-        opacity: 1,
-      }}
-      viewport={{ once: true }}
-      transition={{ duration: 2 }}
-      className="h-screen relative flex flex-col text-center overflow-hidden text-lft md:text-left md:flex-row max-w-full  px-10 justify-evenly mx-auto items-center z-10"
-    >
-      <h3 className="absolute top-24 tracking-[20px] text-gray-500 text-2xl hover:text-gray-600">
+    <section className="h-screen relative flex flex-col text-center overflow-hidden text-lft md:text-left md:flex-row max-w-full  px-10 justify-evenly mx-auto items-center py-10">
+      <h3 className="absolute top-24 tracking-[20px] text-gray-500 text-2xl hover:text-gray-600 hidden md:block">
         EXPERIENCES
       </h3>
-      <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-track-gray-400/20 scrollbar-thumb-[#ff8500] scrollbar-thin">
+      <div className="mx-auto xs:flex grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 scrollbar-none overflow-x-auto">
         {works.map((w) => (
           <WorkCard key={w._id} work={w} />
         ))}
       </div>
-    </motion.div>
+    </section>
   );
 };
 

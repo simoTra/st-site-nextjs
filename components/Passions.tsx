@@ -9,7 +9,20 @@ type Props = {
 
 const Passions = ({ passions }: Props) => {
   return (
-    <motion.div
+    <main className="grid min-h-screen place-content-center place-items-center overflow-hidden">
+      <div
+        id="main_container"
+        className="relative grid place-content-center place-items-center gap-2 "
+      >
+        <h1 className="title text-6xl font-black tracking-[20px] text-gray-500">
+          WIP
+        </h1>
+        <h2 className="cursive text-6xl font-thin tracking-[12px] text-center text-gray-500">
+          This page will come soon...
+        </h2>
+      </div>
+    </main>
+    /*  <motion.div
       initial={{ opacity: 0 }}
       whileInView={{
         opacity: 1,
@@ -50,7 +63,7 @@ const Passions = ({ passions }: Props) => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </motion.div> */
   );
 };
 

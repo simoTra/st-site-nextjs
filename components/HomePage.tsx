@@ -46,7 +46,7 @@ function HomePage({ info }: Props) {
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#ff8500" />
         </h1>
-        <div className="space-x-5">
+        <div className="space-x-5 p-5">
           <Link href="#about">
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -74,13 +74,13 @@ function HomePage({ info }: Props) {
               Passions
             </motion.button>
           </Link>
-          <Link href="#">
+          <Link href={`${info.resume}?dl=resume.pdf`}>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="homePageButton tracking-[6px]"
             >
-              Resume
+              resume
             </motion.button>
           </Link>
           <Link href="#contactMe">

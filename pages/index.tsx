@@ -45,16 +45,16 @@ const Home = ({ info, works, skills, passions, socials }: Props) => {
       <section id="contactMe" className="snap-center">
         <ContactMe />
       </section>
-      <Link href="#homePage">
-        <footer className="sticky bottom-5 w-full cursor-pointer z-30">
+      <footer className="sticky bottom-5 sm:bottom-10 cursor-pointer z-30">
+        <Link href="#homePage">
           <div className="flex items-center justify-center">
             <img
               src="https://i.picsum.photos/id/519/200/200.jpg?hmac=7MwcBjyXrRX5GB6GuDATVm_6MFDRmZaSK7r5-jqDNS0"
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer z-30"
+              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             />
           </div>
-        </footer>
-      </Link>
+        </Link>
+      </footer>
       {/*       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{
