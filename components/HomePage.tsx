@@ -74,7 +74,7 @@ function HomePage({ info }: Props) {
               Passions
             </motion.button>
           </Link>
-          <Link href={`${info.resume}?dl=resume.pdf`}>
+          <Link href={`${info.resume}?dl=simone_traversi_resume.pdf`}>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

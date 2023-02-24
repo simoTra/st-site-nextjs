@@ -54,13 +54,12 @@ const Home = ({ info, works, skills, passions, socials }: Props) => {
               fill="#000000"
               transform="rotate(270)"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 stroke="#ff8500"
-                stroke-width="31.27782"
+                strokeWidth="31.27782"
               >
                 {" "}
                 <g>

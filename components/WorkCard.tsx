@@ -12,11 +12,9 @@ const WorkCard = ({ work }: Props) => {
     <motion.article
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 1.05 }}
-      className="rounded-xl bg-white p-3 flex flex-col justify-between"
+      className="rounded-xl bg-white p-3 flex flex-col justify-around"
     >
-      <div className="relative flex items-end overflow-hidden rounded-xl">
-        <img src={urlFor(work?.image).url()} alt="experience image" />
-      </div>
+      <img src={urlFor(work?.image).url()} alt="experience image" />
 
       <div className="mt-1 p-2">
         <h2 className="text-slate-700 font-bold text-center">{work.job}</h2>
@@ -27,7 +25,7 @@ const WorkCard = ({ work }: Props) => {
           {work.initialData} - {work.current ? "Present" : work.endData}
         </p>
 
-        <div className="mt-3 flex items-end justify-between text-start">
+        <div className="mt-3 text-center">
           <ul className="list-disc">
             {work.bulletPoint.map((bp, i) => (
               <li key={i} className="text-sm text-slate-400">

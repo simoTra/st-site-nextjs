@@ -11,8 +11,9 @@ type Props = {
 const About = ({ info }: Props) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ x: -200, opacity: 0 }}
       whileInView={{
+        x: 0,
         opacity: 1,
       }}
       viewport={{ once: true }}
@@ -70,7 +71,7 @@ const About = ({ info }: Props) => {
           {info.bio}
         </motion.p>
         <div>
-          <Link href={`${info.resume}?dl=resume.pdf`}>
+          <Link href={`${info.resume}?dl=simone_traversi_resume.pdf`}>
             <motion.button
               initial={{ x: -200, opacity: 0 }}
               whileInView={{
